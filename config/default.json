@@ -21,7 +21,9 @@
       "cms",
       "attribute",
       "taxrule",
-      "review"
+      "review",
+      "m2block",
+      "m2page"
     ]
   },
   "redis": {

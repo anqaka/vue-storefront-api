@@ -1,0 +1,21 @@
+type Query {
+  m2page (
+    search: String @doc(description: "Performs a full-text search using the specified key words."),
+    filter: M2PageFilterInput @doc(description: "An array of blocks that match the specified search criteria")
+    ): ESResponse
+}
+
+input M2PageFilterInput @doc(description: "PageFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.") {
+    store_id: FilterTypeInput @doc(description: "array of assigned store ids")
+    identifier: FilterTypeInput @doc(description: "page identifier"),
+    title: FilterTypeInput @doc(description: "page title"),
+    page_layout: FilterTypeInput @doc(description: "page layout")
+    meta_title: FilterTypeInput @doc(description: "page meta title")
+    meta_keywords: FilterTypeInput @doc(description: "page meta keywords")
+    meta_description: FilterTypeInput @doc(description: "page meta description"),
+    content_heading: FilterTypeInput @doc(description: "page content heading"),
+    content: FilterTypeInput @doc(description: "page content in html"),
+    creation_time: FilterTypeInput @doc(description: "bock's creation time"),
+    update_time: FilterTypeInput @doc(description: "last time of block's update"),
+    active: FilterTypeInput @doc(description: "check if block is active")
+}

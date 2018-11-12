@@ -1,0 +1,16 @@
+type Query {
+  m2block (
+    search: String @doc(description: "Performs a full-text search using the specified key words."),
+    filter: M2BlockFilterInput @doc(description: "An array of blocks that match the specified search criteria")
+    ): ESResponse
+}
+
+input M2BlockFilterInput @doc(description: "BlockFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.") {
+    store_id: FilterTypeInput @doc(description: "array of assigned store ids")
+    identifier: FilterTypeInput @doc(description: "blocks's identifier"),
+    title: FilterTypeInput @doc(description: "block's title"),
+    content: FilterTypeInput @doc(description: "block's content in html"),
+    creation_time: FilterTypeInput @doc(description: "bock's creation time"),
+    update_time: FilterTypeInput @doc(description: "last time of block's update"),
+    active: FilterTypeInput @doc(description: "check if block is active")
+}
